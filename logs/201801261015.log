@@ -1,0 +1,16 @@
+2018-01-26 10:15:17,789 - BrowserEngine - INFO - You had select Chrome browser.
+2018-01-26 10:15:17,789 - BrowserEngine - INFO - The test server url is: https://www.baidu.com
+2018-01-26 10:15:22,088 - BrowserEngine - INFO - Chrome.
+2018-01-26 10:15:23,039 - BrowserEngine - INFO - Open url: https://www.baidu.com
+2018-01-26 10:15:24,208 - BrowserEngine - INFO - Maximize the current window.
+2018-01-26 10:15:24,208 - BrowserEngine - INFO - Set implicitly wait 10 seconds.
+2018-01-26 10:15:24,248 - BasePage - INFO - 通过 id 已经成功的找到元素: kw .
+2018-01-26 10:15:24,369 - BasePage - INFO - 在输入框已经输入：'胡歌' .
+2018-01-26 10:15:25,855 - BasePage - INFO - 已经截图并保存到文件：E:\SZR\zdh\framework_demo/screenshots/201801261015.png
+2018-01-26 10:15:25,870 - BasePage - INFO - 通过 id 已经成功的找到元素: kw .
+2018-01-26 10:15:25,918 - BasePage - INFO - 在输入框已经输入：'薛之谦' .
+2018-01-26 10:15:25,932 - BasePage - INFO - 已经通过 xpath 成功找到元素: //*[@id='su'] .
+2018-01-26 10:15:26,014 - BasePage - INFO - ''元素被点击.
+2018-01-26 10:15:28,385 - BasePage - INFO - 已经截图并保存到文件：E:\SZR\zdh\framework_demo/screenshots/201801261015.png
+2018-01-26 10:15:28,385 - BasePage - INFO - 当前页标题:'薛之谦_百度搜索'
+2018-01-26 10:15:31,490 - BrowserEngine - INFO - Now, Close and quit the browser.

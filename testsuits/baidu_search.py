@@ -4,6 +4,7 @@
 import time
 import unittest
 from framework.brower_engine import BrowserEngine
+from pageobjects.baidu_homepage import HomePage
 
 """
 unittest
@@ -19,31 +20,55 @@ unittest
 
 class BaiduSearch(unittest.TestCase):
 
+    """
     def setUp(self):
+    def tearDown(self):
+    用这两个方法时，下面测试用例只会执行最后面一个
+    若想执行全部得改成类方法
+    def setUpClass(cls):
+    def tearDownClass(cls):
+    """
+    @classmethod
+    def setUpClass(cls):
         """
         前提准备工作
         :return:
         """
-        self.engine = BrowserEngine.__new__(BrowserEngine)
-        self.driver = self.engine.open_browser()
+        cls.engine = BrowserEngine.__new__(BrowserEngine)
+        cls.driver = cls.engine.open_browser()
 
-
-    def tearDown(self):
+    @classmethod
+    def tearDownClass(cls):
         """
         测试结束后的操作
         :return:
         """
-        self.engine.quit_browser()
+        cls.engine.quit_browser()
         # self.driver.quit()
 
     def test_baidu_search(self):
-        self.driver.find_element_by_id('kw').send_keys("胡歌")
+        homepage = HomePage(self.driver)
+        homepage.type_search('胡歌')
         time.sleep(1)
+        homepage.get_windows_img()  # 基类截图方法
         try:
             assert '胡歌' in self.driver.title
             print('测试通过.')
         except Exception as e:
             print('测试失败.', format(e))
+
+    def test_baidu_search_second(self):
+        homepage = HomePage(self.driver)
+        homepage.type_search('薛之谦')
+        homepage.send_submit_btn()
+        time.sleep(2)
+        homepage.get_windows_img()  # 基类截图方法
+        try:
+            assert '薛之谦' in homepage.get_page_title()
+            print('测试通过.')
+        except Exception as e:
+            print("测试失败:%s" % e)
+
 
 
 if __name__ == '__main__':
